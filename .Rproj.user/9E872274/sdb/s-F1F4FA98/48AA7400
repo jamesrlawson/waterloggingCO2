@@ -1,0 +1,17 @@
+{
+    "contents" : "require(lme4)\n\nblah <- lme(Cond ~ CO2, random = ~1|GH, data = licor.euc)\nsummary(blah)\n",
+    "created" : 1412215248879.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2451491166",
+    "id" : "48AA7400",
+    "lastKnownWriteTime" : 578055781,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

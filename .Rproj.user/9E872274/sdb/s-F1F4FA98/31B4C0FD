@@ -1,0 +1,17 @@
+{
+    "contents" : "licor <- read.csv(\"data/licor/licor_preflood1.csv\", header=TRUE)\n\nlicor$GH <- as.factor(licor$GH)\nlicor$CO2 <- as.factor(licor$CO2)\n\nlicor.euc <- subset(licor, species == \"E\")\nlicor.aca <- subset(licor, species == \"A\")\nlicor.cas <- subset(licor, species == \"C\")\n\n## EUCALYPTUS\n\n# photosynthesis\n\nphoto.GH.aov_euc <- aov(Photo ~ GH, data = licor.euc)\nsummary(photo.GH.aov_euc)\nTukeyHSD(photo.GH.aov_euc)\n\nphoto.CO2.aov_euc <- aov(Photo ~ CO2, data = licor.euc)\nsummary(photo.CO2.aov_euc)\n\nphoto.CO2.lme_euc <- lme(Photo ~ CO2, random = ~1|GH, data = licor.euc, na.action=na.omit)\nsummary(photo.CO2.lme_euc)\n\n# stomatal conductance\n\nCond.GH.aov_euc <- aov(Cond ~ GH, data = licor.euc)\nsummary(Cond.GH.aov_euc)\nTukeyHSD(Cond.GH.aov_euc)\n\nCond.CO2.aov_euc <- aov(Cond ~ CO2, data = licor.euc)\nsummary(Cond.CO2.aov_euc)\n\nCond.CO2.lme_euc <- lme(Cond ~ CO2, random = ~1|GH, data = licor.euc, na.action=na.omit)\nsummary(Cond.CO2.lme_euc)\n\n\n ## ACACIA\n\n# photosynthesis\n\nphoto.GH.aov_aca <- aov(Photo ~ GH, data = licor.aca)\nsummary(photo.GH.aov_aca)\nTukeyHSD(photo.GH.aov_aca)\n\nphoto.CO2.aov_aca <- aov(Photo ~ CO2, data = licor.aca)\nsummary(photo.CO2.aov_aca)\n\nphoto.CO2.lme_aca <- lme(Photo ~ CO2, random = ~1|GH, data = licor.aca, na.action=na.omit)\nsummary(photo.CO2.lme_aca)\n\n# stomatal conductance\n\nCond.GH.aov_aca <- aov(Cond ~ GH, data = licor.aca)\nsummary(Cond.GH.aov_aca)\nTukeyHSD(Cond.GH.aov_aca)\n\nCond.CO2.aov_aca <- aov(Cond ~ CO2, data = licor.aca)\nsummary(Cond.CO2.aov_aca)\n\nCond.CO2.lme_aca <- lme(Cond ~ CO2, random = ~1|GH, data = licor.aca, na.action=na.omit)\nsummary(Cond.CO2.lme_aca)\n\n\n## CASUARINA\n\n# photosynthesis\n\nphoto.GH.aov_cas <- aov(Photo ~ GH, data = licor.cas)\nsummary(photo.GH.aov_cas)\nTukeyHSD(photo.GH.aov_cas)\n\nphoto.CO2.aov_cas <- aov(Photo ~ CO2, data = licor.cas)\nsummary(photo.CO2.aov_cas)\n\nphoto.CO2.lme_cas <- lme(Photo ~ CO2, random = ~1|GH, data = licor.cas, na.action=na.omit)\nsummary(photo.CO2.lme_cas)\n\n# stomatal conductance\n\nCond.GH.aov_cas <- aov(Cond ~ GH, data = licor.cas)\nsummary(Cond.GH.aov_cas)\nTukeyHSD(Cond.GH.aov_cas)\n\nCond.CO2.aov_cas <- aov(Cond ~ CO2, data = licor.cas)\nsummary(Cond.CO2.aov_cas)\n\nCond.CO2.lme_cas <- lme(Cond ~ CO2, random = ~1|GH, data = licor.cas, na.action=na.omit)\nsummary(Cond.CO2.lme_cas)\n\n",
+    "created" : 1412132332794.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1982134761",
+    "id" : "31B4C0FD",
+    "lastKnownWriteTime" : 1412132655,
+    "path" : "C:/Users/James Lawson/Desktop/glasshouse/licor_analysis.R",
+    "project_path" : "licor_analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

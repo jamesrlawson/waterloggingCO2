@@ -1,0 +1,17 @@
+{
+    "contents" : "PAM <- read.csv(\"data/PAM/PAM_preflood.csv\", header=TRUE)\nPAM$GH <- as.factor(PAM$GH)\nPAM$CO2 <- as.factor(PAM$CO2)\n\n# acacia\n\nPAMacacia_GH.aov <- aov(acacia ~ GH, data = PAM)\nsummary(PAMacacia_GH.aov)\nTukeyHSD(PAMacacia_GH.aov)\n\nPAMacacia_CO2.lme <- lme(acacia ~ CO2, random = ~1|GH, data = PAM, na.action=na.omit)\nsummary(PAMacacia_CO2.lme)\n\n# casuarina\n\nPAMcasuarina_GH.aov <- aov(casuarina ~ GH, data = PAM)\nsummary(PAMcasuarina_GH.aov)\nTukeyHSD(PAMcasuarina_GH.aov)\n\nPAMcasuarina_CO2.lme <- lme(casuarina ~ CO2, random = ~1|GH, data = PAM, na.action=na.omit)\nsummary(PAMcasuarina_CO2.lme)\n\n# eucalyptus\n\nPAMeucalyptus_GH.aov <- aov(eucalyptus ~ GH, data = PAM)\nsummary(PAMeucalyptus_GH.aov)\nTukeyHSD(PAMeucalyptus_GH.aov)\n\nPAMeucalyptus_CO2.lme <- lme(eucalyptus ~ CO2, random = ~1|GH, data = PAM, na.action=na.omit)\nsummary(PAMeucalyptus_CO2.lme)\n",
+    "created" : 1412126634104.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1514981246",
+    "id" : "A6AB6388",
+    "lastKnownWriteTime" : 1412127294,
+    "path" : "C:/Users/James Lawson/Desktop/glasshouse/PAM analysis.R",
+    "project_path" : "PAM analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1412126622470.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "69AC6A07",
+    "lastKnownWriteTime" : 1030057065,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "PAM",
+        "contentUrl" : "content?title=PAM&file=b1db19bb585c4f3c8646f168c99241af.htm",
+        "displayedObservations" : "48",
+        "displayedVariables" : 6,
+        "totalObservations" : "48",
+        "variables" : "6"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
