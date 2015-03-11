@@ -16,7 +16,7 @@ source("scripts/functions.R")
 
 
 licor <- read.csv("data/licor/licor_all1.csv", header=TRUE)
-#licor <- subset(licor, treatment != "flooded")
+#licor <- subset(licor, treatment != "waterlogged")
 traits <- read.csv("data/harvest/traits1.csv", header=TRUE)
 
 licor$species <- as.factor(licor$species)
@@ -31,6 +31,7 @@ licor$condMass <- licor$SLA * licor$cond
 
 licor$WUE <- licor$photo/licor$Trmmol
 
+licor$treatment <- factor(licor$treatment, levels = c("control", "waterlogged", "recovery"))
 
 licor.A <- subset(licor, species == "acacia")
 licor.C <- subset(licor, species == "cas")
@@ -61,9 +62,9 @@ facetPlot(licor.A_photo, acacia, photosyntheticRate)
 facetPlot(licor.C_photo, casuarina, photosyntheticRate)
 facetPlot(licor.E_photo, eucalyptus, photosyntheticRate)
 
-facetPlot(licor.A_cond, acacia, stomatalConductance)
-facetPlot(licor.C_cond, casuarina, stomatalConductance)
-facetPlot(licor.E_cond, eucalyptus, stomatalConductance)
+#facetPlot(licor.A_cond, acacia, stomatalConductance)
+#facetPlot(licor.C_cond, casuarina, stomatalConductance)
+#facetPlot(licor.E_cond, eucalyptus, stomatalConductance)
 
 facetPlot(licor.A_WUE, acacia, WUE)
 facetPlot(licor.C_WUE, casuarina, WUE)
@@ -93,40 +94,15 @@ facetPlot(licor.E_tr, eucalyptus, Trmmol)
 # photosynthetic rate
 
 
-
 photo.A <- aov(photo ~ CO2 * treatment, data = licor.A)
 etaSquared(photo.A, anova = TRUE)
 
-cohen.d(photo ~ CO2, data = subset(licor.A, treatment=="control"))
-cohen.d(photo ~ CO2, data = subset(licor.A, treatment=="flooded"))
-cohen.d(photo ~ CO2, data = subset(licor.A, treatment=="recovery"))
-
-
-
 photo.C <- aov(photo ~ CO2 * treatment, data = licor.C)
 etaSquared(photo.C, anova = TRUE)
-pairwise.t.test(subset(licor.C, treatment == "control")$photo, subset(licor.C, treatment == "control")$CO2, p.adj = "none")
-pairwise.t.test(subset(licor.C, treatment == "recovery")$photo, subset(licor.C, treatment == "recovery")$CO2, p.adj = "none")
-
-p.adjust(c(0.043, 0.087), method="BH")
-
-cohen.d(photo ~ CO2, data = subset(licor.C, treatment=="control"))
-cohen.d(photo ~ CO2, data = subset(licor.C, treatment=="recovery"))                              
-
-
 
 photo.E <- aov(photo ~ CO2 * treatment, data = licor.E)
 etaSquared(photo.E, anova = TRUE)
-pairwise.t.test(subset(licor.E, treatment == "control")$photo, subset(licor.E, treatment == "control")$CO2, p.adj = "none")
-pairwise.t.test(subset(licor.E, treatment == "recovery")$photo, subset(licor.E, treatment == "recovery")$CO2, p.adj = "none")
 
-p.adjust(c(0.18, 0.25), method="BH")
-
-cohen.d(photo ~ CO2, data = subset(licor.E, treatment=="control"))
-cohen.d(photo ~ CO2, data = subset(licor.E, treatment=="recovery"))
-
-cohen.d(photo ~ treatment, data = subset(licor.E, CO2=="A"))
-cohen.d(photo ~ treatment, data = subset(licor.E, CO2=="E"))
 
 # transpiration
 
@@ -163,7 +139,7 @@ cohen.d(WUE ~ CO2, data = subset(licor.E, treatment=="recovery"))
 ## TRAITS ##
 
 traits <- read.csv("data/harvest/traits1.csv", header=T)
-#traits <- subset(traits, treatment != "flooded")
+#traits <- subset(traits, treatment != "waterlogged")
 traits$dryBiomass <- traits$dryRootBiomass + traits$dryShootBiomass
 
 traits <- data.frame(cbind(
@@ -182,14 +158,15 @@ traits <- data.frame(cbind(
   traits["SLA"], 
   traits["stemDensity"]))
 
+traits$treatment <- factor(traits$treatment, levels = c("control", "waterlogged", "recovery"))
 
 traits.A <- subset(traits, species == "acacia")
 traits.C <- subset(traits, species == "cas")
 traits.E <- subset(traits, species == "euc")
 
-plot.means_facet(traits.A, acacia)
-plot.means_facet(traits.C, casuarina)
-plot.means_facet(traits.E, eucalyptus)
+plot.means(traits.A, acacia)
+plot.means(traits.C, casuarina)
+plot.means(traits.E, eucalyptus)
 
 rootFineProportion.A <- getSummary_traits(traits.A, rootFineProportion, acacia)
 rootFineProportion.C <- getSummary_traits(traits.C, rootFineProportion, cas)
@@ -302,10 +279,10 @@ stemDensity.E.aov <- aov(stemDensity ~ CO2 * treatment, data = traits.E)
 etaSquared(stemDensity.E.aov, anova = TRUE)
 
 
-# removing flooded treatment for biomass comparisons
+# removing waterlogged treatment for biomass comparisons
 
 
-traits1 <- subset(traits1, treatment != "flooded")
+traits1 <- subset(traits1, treatment != "waterlogged")
 
 traits.A1 <- subset(traits1, species == "acacia")
 traits.C1 <- subset(traits1, species == "cas")
@@ -328,7 +305,7 @@ dryShootBiomass.C <- getSummary_traits(traits.C1, dryShootBiomass, cas)
 dryShootBiomass.E <- getSummary_traits(traits.E1, dryShootBiomass, euc)
 
 
-traits <- subset(traits, treatment != "flooded")
+traits <- subset(traits, treatment != "waterlogged")
 traits.A <- subset(traits, species == "acacia")
 traits.C <- subset(traits, species == "cas")
 traits.E <- subset(traits, species == "euc")

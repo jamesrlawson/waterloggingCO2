@@ -47,11 +47,11 @@ facetPlot <- function(df, species, measurement) {
   outDir <- sprintf("%s", figureDir)
   dir.create(outDir, recursive=TRUE)
   
-  png(sprintf("%s/%s_%s.png", outDir, species, measurement), width = 800, height = 600)
+  svg(sprintf("%s/%s_%s.svg", outDir, species, measurement), width = 8, height = 6, pointsize = 12)
   
   plot <- ggplot(df, aes(treatment, mean, fill=CO2)) 
   plot <- plot + geom_bar(aes(fill = CO2), stat = "identity", position="dodge") 
-  plot = plot + scale_fill_grey()
+  plot <- plot + scale_fill_grey()
   plot <- plot + ylab(bquote('Photosynthetic rate ('*mu~ 'mol' ~CO[2]~ m^-2~s^-1*')'))
 #  plot <- plot + ylab(bquote('Transpiration rate ('*m~ 'mol' ~H[2]~O~ m^-2~s^-1*')'))
 #  plot <- plot + ylab("WUE (Photosynthetic rate / transpiration rate)")
@@ -74,6 +74,51 @@ facetPlot <- function(df, species, measurement) {
   dev.off()
   
 }
+
+
+plot.means_facet <- function(df, species) {
+  
+  figureDir <- "C:/Users/James/Desktop/stuff/glasshouse/glasshouse proj/output/figures/traits"
+  species <- deparse(substitute(species))
+  
+  outDir <- figureDir
+  
+  dir.create(outDir, recursive=TRUE)
+  
+  df_melted <- melt(df)
+  df_melted <- na.omit(df_melted)
+  
+  stats <- ddply(df_melted, .(CO2, treatment, variable), summarise, 
+                 mean = mean(value),
+                 sem = sd(value)/sqrt(length(value)))
+  stats <- transform(stats, lower=mean-sem, upper=mean+sem)
+  
+  
+  svg(sprintf("%s/%s_traitfacet.svg", outDir, species), width = 8, height = 6, pointsize = 12)
+  
+  plot <- ggplot(stats, aes(treatment, mean, fill=CO2)) 
+  plot <- plot + geom_bar(stat = "identity", position="dodge")    
+  plot <- plot + scale_fill_grey()
+  plot <- plot + facet_wrap(~ variable, scales = "free") 
+  plot <- plot + geom_errorbar(aes(ymax=upper,
+                                   ymin=lower),
+                               position=position_dodge(0.9),
+                               data=stats)    
+  plot <- plot + ggtitle(paste(species))  
+  plot <- plot + theme_bw()  
+  plot <- plot + theme(axis.title.x=element_blank(),
+                       panel.border = element_blank(),
+                       panel.grid.minor = element_blank(),
+                       panel.grid.major = element_blank(),
+                       axis.line = element_line(size=.2, color = "black")
+  )
+  
+  print(plot)
+  
+  dev.off()      
+  
+}
+
 
 plot.means <- function(df, species) {
   
@@ -102,16 +147,23 @@ plot.means <- function(df, species) {
     traitStats <- subset(stats, variable == trait)
     traitStats <- traitStats[-3]
     
-    png(sprintf("%s/%s.png", outDir, trait), width = 800, height = 600)
+    svg(sprintf("%s/%s.svg", outDir, trait), width = 8, height = 6, pointsize = 12)
     
     plot <- ggplot(traitStats, aes(treatment, mean, fill=CO2)) 
     plot <- plot + geom_bar(stat = "identity", position="dodge") 
-    
+    plot <- plot + scale_fill_grey()
     plot <- plot + geom_errorbar(aes(ymax=upper,
                                      ymin=lower),
                                  position=position_dodge(0.9),
                                  data=traitStats)    
     plot <- plot + ylab(trait)  
+    plot <- plot + theme_bw()  
+    plot <- plot + theme(axis.title.x=element_blank(),
+                         panel.border = element_blank(),
+                         panel.grid.minor = element_blank(),
+                         panel.grid.major = element_blank(),
+                         axis.line = element_line(size=.2, color = "black")
+    )
     
     print(plot)
     
@@ -120,43 +172,6 @@ plot.means <- function(df, species) {
   }
   
 }
-
-plot.means_facet <- function(df, species) {
-  
-  figureDir <- "C:/Users/James/Desktop/stuff/glasshouse/glasshouse proj/output/figures/traits"
-  species <- deparse(substitute(species))
-  
-  outDir <- figureDir
-  
-  dir.create(outDir, recursive=TRUE)
-  
-  df_melted <- melt(df)
-  df_melted <- na.omit(df_melted)
-  
-  stats <- ddply(df_melted, .(CO2, treatment, variable), summarise, 
-                 mean = mean(value),
-                 sem = sd(value)/sqrt(length(value)))
-  stats <- transform(stats, lower=mean-sem, upper=mean+sem)
-  
-  
-  png(sprintf("%s/%s_traitfacet.png", outDir, species), width = 1500, height = 900)
-  
-  plot <- ggplot(stats, aes(treatment, mean, fill=CO2)) 
-  plot <- plot + geom_bar(stat = "identity", position="dodge")    
-  plot <- plot + facet_wrap(~ variable, scales = "free") 
-  plot <- plot + geom_errorbar(aes(ymax=upper,
-                                   ymin=lower),
-                               position=position_dodge(0.9),
-                               data=stats)    
-  plot <- plot + ggtitle(paste(species))  
-  
-  print(plot)
-  
-  dev.off()      
-  
-}
-
-
 
 
 
