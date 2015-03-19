@@ -1,0 +1,17 @@
+{
+    "contents" : "cond.A <- aov(cond ~ CO2 * treatment, data = licor.A)\netaSquared(cond.A, anova = TRUE)\n\ncond.C <- aov(cond ~ CO2 * treatment, data = licor.C)\netaSquared(cond.C, anova = TRUE)\n\ncond.E <- aov(cond ~ CO2 * treatment, data = licor.E)\netaSquared(cond.E, anova = TRUE)",
+    "created" : 1426474671781.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "132950786",
+    "id" : "CFF7D546",
+    "lastKnownWriteTime" : 1426047281,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled10"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

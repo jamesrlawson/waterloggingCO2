@@ -62,9 +62,9 @@ facetPlot(licor.A_photo, acacia, photosyntheticRate)
 facetPlot(licor.C_photo, casuarina, photosyntheticRate)
 facetPlot(licor.E_photo, eucalyptus, photosyntheticRate)
 
-#facetPlot(licor.A_cond, acacia, stomatalConductance)
-#facetPlot(licor.C_cond, casuarina, stomatalConductance)
-#facetPlot(licor.E_cond, eucalyptus, stomatalConductance)
+facetPlot(licor.A_cond, acacia, stomatalConductance)
+facetPlot(licor.C_cond, casuarina, stomatalConductance)
+facetPlot(licor.E_cond, eucalyptus, stomatalConductance)
 
 facetPlot(licor.A_WUE, acacia, WUE)
 facetPlot(licor.C_WUE, casuarina, WUE)
@@ -122,18 +122,24 @@ etaSquared(Trmmol.E, anova = TRUE)
 
 WUE.A <- aov(WUE ~ CO2 * treatment, data = licor.A)
 etaSquared(WUE.A, anova = TRUE)
-cohen.d(WUE ~ treatment, data = subset(licor.E, CO2=="A"))
-cohen.d(WUE ~ treatment, data = subset(licor.E, CO2=="E"))
 
 WUE.C <- aov(WUE ~ CO2 * treatment, data = licor.C)
 etaSquared(WUE.C, anova = TRUE)
 
 WUE.E <- aov(WUE ~ CO2 * treatment, data = licor.E)
 etaSquared(WUE.E, anova = TRUE)
-cohen.d(WUE ~ CO2, data = subset(licor.E, treatment=="control"))
-cohen.d(WUE ~ CO2, data = subset(licor.E, treatment=="recovery"))
 
 
+# stomatal conductance
+
+cond.A <- aov(cond ~ CO2 * treatment, data = licor.A)
+etaSquared(cond.A, anova = TRUE)
+
+cond.C <- aov(cond ~ CO2 * treatment, data = licor.C)
+etaSquared(cond.C, anova = TRUE)
+
+cond.E <- aov(cond ~ CO2 * treatment, data = licor.E)
+etaSquared(cond.E, anova = TRUE)
 
 
 ## TRAITS ##
@@ -159,6 +165,8 @@ traits <- data.frame(cbind(
   traits["stemDensity"]))
 
 traits$treatment <- factor(traits$treatment, levels = c("control", "waterlogged", "recovery"))
+
+#traits <- subset(traits, treatment != "waterlogged")
 
 traits.A <- subset(traits, species == "acacia")
 traits.C <- subset(traits, species == "cas")
@@ -205,7 +213,7 @@ traits <- data.frame(cbind(
   traits["treatment"],
   sqrt(traits["dryBiomass"]),
   sqrt(traits["dryRootBiomass"]), 
-  sqrt(traits["dryFineRootMass"],)
+  sqrt(traits["dryFineRootMass"]),
   sqrt(traits["dryShootBiomass"]),
   log10(traits["RMF"]),
   traits["rootFineProportion"],
@@ -279,6 +287,16 @@ stemDensity.E.aov <- aov(stemDensity ~ CO2 * treatment, data = traits.E)
 etaSquared(stemDensity.E.aov, anova = TRUE)
 
 
+RMF.A.aov <- aov(RMF ~ CO2 * treatment, data = traits.A)
+etaSquared(RMF.A.aov, anova = TRUE)
+TukeyHSD(RMF.A.aov)
+RMF.C.aov <- aov(RMF ~ CO2 * treatment, data = traits.C)
+etaSquared(RMF.C.aov, anova = TRUE)
+RMF.E.aov <- aov(RMF ~ CO2 * treatment, data = traits.E)
+etaSquared(RMF.E.aov, anova = TRUE)
+
+
+
 # removing waterlogged treatment for biomass comparisons
 
 
@@ -344,6 +362,13 @@ TukeyHSD(dryShootBiomass.C.aov)
 dryShootBiomass.E.aov <- aov(dryShootBiomass ~ CO2 * treatment, data = traits.E)
 etaSquared(dryShootBiomass.E.aov, anova = TRUE)
 
+RMF.A.aov <- aov(RMF ~ CO2 * treatment, data = traits.A)
+etaSquared(RMF.A.aov, anova = TRUE)
+TukeyHSD(RMF.A.aov)
+RMF.C.aov <- aov(RMF ~ CO2 * treatment, data = traits.C)
+etaSquared(RMF.C.aov, anova = TRUE)
+RMF.E.aov <- aov(RMF ~ CO2 * treatment, data = traits.E)
+etaSquared(RMF.E.aov, anova = TRUE)
 
 
 
