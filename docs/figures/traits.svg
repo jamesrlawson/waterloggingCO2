@@ -3854,9 +3854,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="641.41405"
-     inkscape:cy="201.89784"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="394.51612"
+     inkscape:cy="915.26054"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -3864,8 +3864,8 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1018"
+     inkscape:window-width="1680"
+     inkscape:window-height="988"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -9542,7 +9542,7 @@
            x="-549.52301"
            y="-50.724396" /></flowRegion><flowPara
          id="flowPara23182"
-         style="font-size:14px;font-style:oblique;-inkscape-font-specification:Sans Oblique">Acacia floribunda</flowPara></flowRoot>    <flowRoot
+         style="font-size:31.24633344px;font-style:oblique;-inkscape-font-specification:Sans Oblique">Acacia floribunda</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot23184"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -9557,21 +9557,21 @@
            x="121.21831"
            y="-42.643177" /></flowRegion><flowPara
          id="flowPara23190"
-         style="font-size:14px;font-style:oblique;-inkscape-font-specification:Sans Oblique">Casuarina cunninghamiana</flowPara></flowRoot>    <flowRoot
+         style="font-size:31.24633344px;font-style:oblique;-inkscape-font-specification:Sans Oblique">Casuarina cunninghamiana</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot23192"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="matrix(0.38404506,0,0,0.38404506,-414.61037,-9.0985618)"
+       transform="matrix(0.38404506,0,0,0.38404506,-449.96571,-9.0985618)"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600"><flowRegion
          id="flowRegion23194"><rect
            id="rect23196"
-           width="307.08636"
-           height="58.588848"
+           width="470.95386"
+           height="53.065224"
            x="923.27942"
            y="-64.866531" /></flowRegion><flowPara
          id="flowPara23198"
-         style="font-size:14px;font-style:oblique;-inkscape-font-specification:Sans Oblique">Eucalyptus camaldulensis</flowPara></flowRoot>    <g
+         style="font-size:31.24633408px;font-style:oblique;-inkscape-font-specification:Sans Oblique">Eucalyptus camaldulensis camaldulensissis</flowPara></flowRoot>    <g
        id="surface6711"
        transform="matrix(0.48371403,0,0,0.48371403,-716.28178,618.99766)">
       <rect
@@ -11428,5 +11428,149 @@
            height="1" />
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="39.59798"
+       y="32.677208"
+       id="text64531"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64533"
+         x="39.59798"
+         y="32.677208">(a)  *W</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="309.71277"
+       y="36.212742"
+       id="text64535"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64537"
+         x="309.71277"
+         y="36.212742">(b)  *C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="754.48291"
+       y="35.505634"
+       id="text64539"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64541"
+         x="754.48291"
+         y="35.505634">(c)  *W</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="47.376156"
+       y="241.98082"
+       id="text64543"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64545"
+         x="47.376156"
+         y="241.98082">(d)  *W</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="318.19806"
+       y="240.5666"
+       id="text64547"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64549"
+         x="318.19806"
+         y="240.5666">(e)  *N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="618.01135"
+       y="242.68793"
+       id="text64551"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64553"
+         x="618.01135"
+         y="242.68793">(f)  *W</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="41.719299"
+       y="453.40573"
+       id="text64555"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64557"
+         x="41.719299"
+         y="453.40573">(g)  *N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="310.41989"
+       y="449.87021"
+       id="text64559"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64561"
+         x="310.41989"
+         y="449.87021">(h)  *C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="586.19153"
+       y="451.28442"
+       id="text64563"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64565"
+         x="586.19153"
+         y="451.28442">(i)  *N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="202.23254"
+       y="671.90173"
+       id="text64567"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64569"
+         x="202.23254"
+         y="671.90173">(j)  *W</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="310.41989"
+       y="664.1236"
+       id="text64571"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64573"
+         x="310.41989"
+         y="664.1236">(k)  *C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="652.65955"
+       y="669.0733"
+       id="text64575"
+       sodipodi:linespacing="125%"
+       transform="translate(-716.53878,-33.378397)"><tspan
+         sodipodi:role="line"
+         id="tspan64577"
+         x="652.65955"
+         y="669.0733">(l)  *W</tspan></text>
   </g>
 </svg>

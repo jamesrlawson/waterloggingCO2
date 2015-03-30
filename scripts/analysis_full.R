@@ -166,7 +166,7 @@ traits <- data.frame(cbind(
 
 traits$treatment <- factor(traits$treatment, levels = c("control", "waterlogged", "recovery"))
 
-#traits <- subset(traits, treatment != "waterlogged")
+traits <- subset(traits, treatment != "waterlogged")
 
 traits.A <- subset(traits, species == "acacia")
 traits.C <- subset(traits, species == "cas")

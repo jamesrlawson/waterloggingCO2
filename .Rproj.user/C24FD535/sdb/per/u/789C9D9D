@@ -1,0 +1,17 @@
+{
+    "contents" : "dryFineRootMass.A <- getSummary_traits(traits.A1, dryFineRootMass, acacia)\ndryFineRootMass.C <- getSummary_traits(traits.C1, dryFineRootMass, cas)\ndryFineRootMass.E <- getSummary_traits(traits.E1, dryFineRootMass, euc)",
+    "created" : 1425958770133.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "124186633",
+    "id" : "789C9D9D",
+    "lastKnownWriteTime" : 21392300099829876,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled9"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

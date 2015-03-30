@@ -52,9 +52,9 @@ facetPlot <- function(df, species, measurement) {
   plot <- ggplot(df, aes(treatment, mean, fill=CO2)) 
   plot <- plot + geom_bar(aes(fill = CO2), stat = "identity", position="dodge") 
   plot <- plot + scale_fill_grey()
-  plot <- plot + ylab(bquote('Photosynthetic rate ('*mu~ 'mol' ~CO[2]~ m^-2~s^-1*')'))
-#  plot <- plot + ylab(bquote('Transpiration rate ('*m~ 'mol' ~H[2]~O~ m^-2~s^-1*')'))
-#  plot <- plot + ylab("WUE (Photosynthetic rate / transpiration rate)")
+#  plot <- plot + ylab(bquote('Photosynthetic rate ('*mu~ 'mol' ~CO[2]~ m^-2~s^-1*')'))
+#  plot <- plot + ylab(bquote('Stomatal conductance ('*m~ 'mol' ~H[2]~O~ m^-2~s^-1*')'))
+  plot <- plot + ylab("WUE (A / Gs)")
 
   plot <- plot + geom_errorbar(aes(ymax=upper,
                                    ymin=lower),
@@ -62,6 +62,7 @@ facetPlot <- function(df, species, measurement) {
                                data=df)    
   #plot <- plot + ggtitle(paste(species, measurement))
   plot <- plot + theme_bw()  
+  plot <- plot + theme_set(theme_bw(base_size = 18))
   plot <- plot + theme(axis.title.x=element_blank(),
                        panel.border = element_blank(),
                        panel.grid.minor = element_blank(),
@@ -158,6 +159,7 @@ plot.means <- function(df, species) {
                                  data=traitStats)    
     plot <- plot + ylab(trait)  
     plot <- plot + theme_bw()  
+    plot <- plot + theme_set(theme_bw(base_size = 18))
     plot <- plot + theme(axis.title.x=element_blank(),
                          panel.border = element_blank(),
                          panel.grid.minor = element_blank(),

@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1426121092316.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AF44E199",
+    "lastKnownWriteTime" : 7741240722073845761,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "dryBiomass.A",
+        "contentUrl" : "content?title=dryBiomass.A&file=85ee93be929140509be3bc77e70e54a8.htm",
+        "displayedObservations" : 4,
+        "displayedVariables" : 7,
+        "totalObservations" : 4,
+        "variables" : 7
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
