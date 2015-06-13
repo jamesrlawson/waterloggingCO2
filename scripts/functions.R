@@ -47,27 +47,32 @@ facetPlot <- function(df, species, measurement) {
   outDir <- sprintf("%s", figureDir)
   dir.create(outDir, recursive=TRUE)
   
-  svg(sprintf("%s/%s_%s.svg", outDir, species, measurement), width = 8, height = 6, pointsize = 12)
+  svg(sprintf("%s/%s_%s.svg", outDir, species, measurement), width = 5, height = 3.7083, pointsize = 12)
   
   plot <- ggplot(df, aes(treatment, mean, fill=CO2)) 
   plot <- plot + geom_bar(aes(fill = CO2), stat = "identity", position="dodge") 
   plot <- plot + scale_fill_grey()
-#  plot <- plot + ylab(bquote('Photosynthetic rate ('*mu~ 'mol' ~CO[2]~ m^-2~s^-1*')'))
-#  plot <- plot + ylab(bquote('Stomatal conductance ('*m~ 'mol' ~H[2]~O~ m^-2~s^-1*')'))
-  plot <- plot + ylab("WUE (A / Gs)")
+  plot <- plot + ylab(bquote('A ('*mu~ 'mol' ~CO[2]~ m^-2~s^-1*')'))
+#  plot <- plot + ylab(bquote('Gs ('*m~ 'mol' ~H[2]~O~ m^-2~s^-1*')'))
+#  plot <- plot + ylab("WUE (A / Gs)")
 
   plot <- plot + geom_errorbar(aes(ymax=upper,
                                    ymin=lower),
                                position=position_dodge(0.9),
+                               width = 0.3,
+                               size = 0.3,
                                data=df)    
   #plot <- plot + ggtitle(paste(species, measurement))
   plot <- plot + theme_bw()  
   plot <- plot + theme_set(theme_bw(base_size = 18))
   plot <- plot + theme(axis.title.x=element_blank(),
+                 #      axis.title.y=element_text(size = 12),
+                 #      axis.text.x=element_text(size = 14),
                        panel.border = element_blank(),
                        panel.grid.minor = element_blank(),
                        panel.grid.major = element_blank(),
-                       axis.line = element_line(size=.2, color = "black")
+                       axis.line = element_line(size=.2, color = "black"),
+                       legend.position = "none"
                        )
 
   print(plot)
@@ -148,7 +153,7 @@ plot.means <- function(df, species) {
     traitStats <- subset(stats, variable == trait)
     traitStats <- traitStats[-3]
     
-    svg(sprintf("%s/%s.svg", outDir, trait), width = 8, height = 6, pointsize = 12)
+    svg(sprintf("%s/%s.svg", outDir, trait), width = 5, height = 3.7083, pointsize = 12)
     
     plot <- ggplot(traitStats, aes(treatment, mean, fill=CO2)) 
     plot <- plot + geom_bar(stat = "identity", position="dodge") 
@@ -156,6 +161,8 @@ plot.means <- function(df, species) {
     plot <- plot + geom_errorbar(aes(ymax=upper,
                                      ymin=lower),
                                  position=position_dodge(0.9),
+                                 width = 0.3,
+                                 size = 0.3,
                                  data=traitStats)    
     plot <- plot + ylab(trait)  
     plot <- plot + theme_bw()  
@@ -164,7 +171,8 @@ plot.means <- function(df, species) {
                          panel.border = element_blank(),
                          panel.grid.minor = element_blank(),
                          panel.grid.major = element_blank(),
-                         axis.line = element_line(size=.2, color = "black")
+                         axis.line = element_line(size=.2, color = "black"),
+                         legend.position = "none"
     )
     
     print(plot)
