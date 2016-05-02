@@ -71,8 +71,8 @@ facetPlot <- function(df, species, measurement) {
                        panel.border = element_blank(),
                        panel.grid.minor = element_blank(),
                        panel.grid.major = element_blank(),
-                       axis.line = element_line(size=.2, color = "black"),
-                       legend.position = "none"
+                       axis.line = element_line(size=.2, color = "black")
+                  #     ,legend.position = "none"
                        )
 
   print(plot)
@@ -171,8 +171,8 @@ plot.means <- function(df, species) {
                          panel.border = element_blank(),
                          panel.grid.minor = element_blank(),
                          panel.grid.major = element_blank(),
-                         axis.line = element_line(size=.2, color = "black"),
-                         legend.position = "none"
+                         axis.line = element_line(size=.2, color = "black")
+                        # ,legend.position = "none"
     )
     
     print(plot)
