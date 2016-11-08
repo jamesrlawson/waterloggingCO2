@@ -252,7 +252,7 @@ summary(glht(licor.E_ez_photo$aov,linfct=mcp(CO2="Tukey")))
 require(afex)
 
 licor.E_melted <- melt(licor.E)
-licor.E_photo <- subset(licor.E, variable =="photo")
+licor.E_photo <- subset(licor.E_melted, variable =="photo")
                                
 
 licor.E_ezglm <- ez.glm(dv = "photo",

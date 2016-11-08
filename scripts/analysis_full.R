@@ -24,6 +24,7 @@ licor$time <- as.factor(licor$time)
 licor$treatment <- as.factor(licor$treatment)
 licor$CO2 <- as.factor(licor$CO2)
 licor$plant <- as.factor(licor$plant)
+licor$GH_start <- as.factor(licor$GH_start)
 
 licor <- merge(licor, traits)
 licor$photoMass <- licor$SLA * licor$photo
@@ -254,10 +255,9 @@ SLA.A.aov <- aov(SLA ~ CO2 * treatment, data = traits.A)
 etaSquared(SLA.A.aov, anova = TRUE)
 SLA.C.aov <- aov(SLA ~ CO2 * treatment, data = traits.C)
 etaSquared(SLA.C.aov, anova = TRUE)
-traits.E <- subset(traits.E, SLA < 1.65)
-SLA.E.aov <- aov(SLA ~ CO2 * treatment, data = traits.E)
-etaSquared(SLA.E.aov, anova = TRUE)
-traits.E <- subset(traits.E, species == "euc")
+#traits.E <- subset(traits.E, SLA < 1.65)
+SLA.E.aov <- aov(SLA ~ CO2 * treatment, data = subset(traits.E, SLA < 1.65))
+
 
 
 RMF.A.aov <- aov(RMF ~ CO2 * treatment, data = traits.A)
